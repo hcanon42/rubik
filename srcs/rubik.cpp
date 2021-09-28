@@ -1,11 +1,11 @@
-#include "rubik.hpp"
+#include "../includes/rubik.hpp"
 
 rubik::rubik() : _up(std::vector<char>{'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w'}),
 				_down(std::vector<char>{'y', 'y', 'y', 'y', 'y', 'y', 'y', 'y', 'y'}),
-				_front(std::vector<char>{'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'}),
-				_back(std::vector<char>{'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g'}),
 				_right(std::vector<char>{'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'}),
-				_left(std::vector<char>{'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r'})
+				_left(std::vector<char>{'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r'}),
+				_front(std::vector<char>{'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'}),
+				_back(std::vector<char>{'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g'})
 {
 }
 
@@ -132,12 +132,12 @@ void	rubik::oppositeSwap(char &a0, char &a1, char &a2, char &b0, char &b1, char 
 
 void    rubik::handleMovement(std::string move)
 {
-	if (move.compare("R"))
+	if (move.compare("R'"))
 	{
 		basicMovement(this->_right);
 		circularSwap(this->_front[2], this->_front[5], this->_front[8], this->_up[2], this->_up[5], this->_up[8], this->_back[6], this->_back[3], this->_back[0], this->_down[2], this->_down[5], this->_down[8]);
 	}
-	else if (move.compare("R'"))
+	else if (move.compare("R"))
 	{
 		reverseMovement(this->_right);
 		circularSwap(this->_front[2], this->_front[5], this->_front[8], this->_down[2], this->_down[5], this->_down[8], this->_back[6], this->_back[3], this->_back[0], this->_up[2], this->_up[5], this->_up[8]);
@@ -147,12 +147,12 @@ void    rubik::handleMovement(std::string move)
 		twiceMovement(this->_right);
 		oppositeSwap(this->_front[2], this->_front[5], this->_front[8], this->_up[2], this->_up[5], this->_up[8], this->_back[6], this->_back[3], this->_back[0], this->_down[2], this->_down[5], this->_down[8]);
 	}
-	else if (move.compare("L"))
+	else if (move.compare("L'"))
 	{
 		basicMovement(this->_left);
 		circularSwap(this->_front[0], this->_front[3], this->_front[6], this->_down[0], this->_down[3], this->_down[6], this->_back[8], this->_back[5], this->_back[2], this->_up[0], this->_up[3], this->_up[6]);
 	}
-	else if (move.compare("L'"))
+	else if (move.compare("L"))
 	{
 		reverseMovement(this->_left);
 		circularSwap(this->_front[0], this->_front[3], this->_front[6], this->_up[0], this->_up[3], this->_up[6], this->_back[8], this->_back[5], this->_back[2], this->_down[0], this->_down[3], this->_down[6]);
@@ -162,4 +162,108 @@ void    rubik::handleMovement(std::string move)
 		twiceMovement(this->_left);
 		oppositeSwap(this->_front[0], this->_front[3], this->_front[6], this->_up[0], this->_up[3], this->_up[6], this->_back[8], this->_back[5], this->_back[2], this->_down[0], this->_down[3], this->_down[6]);
 	}
+	else if (move.compare("U'"))
+	{
+		basicMovement(this->_up);
+		circularSwap(this->_front[0], this->_front[1], this->_front[2], this->_left[0], this->_left[1], this->_left[2], this->_back[0], this->_back[1], this->_back[2], this->_right[0], this->_right[1], this->_right[2]);
+	}
+	else if (move.compare("U"))
+	{
+		reverseMovement(this->_up);
+		circularSwap(this->_front[0], this->_front[1], this->_front[2], this->_right[0], this->_right[1], this->_right[2], this->_back[0], this->_back[1], this->_back[2], this->_left[0], this->_left[1], this->_left[2]);
+	}
+	else if (move.compare("U2"))
+	{
+		twiceMovement(this->_up);
+		oppositeSwap(this->_front[0], this->_front[1], this->_front[2], this->_left[0], this->_left[1], this->_left[2], this->_back[0], this->_back[1], this->_back[2], this->_right[0], this->_right[1], this->_right[2]);
+	}
+	else if (move.compare("D'"))
+	{
+		basicMovement(this->_down);
+		circularSwap(this->_front[6], this->_front[7], this->_front[8], this->_right[6], this->_right[7], this->_right[8], this->_back[6], this->_back[7], this->_back[8], this->_left[6], this->_left[7], this->_left[8]);
+	}
+	else if (move.compare("D"))
+	{
+		reverseMovement(this->_down);
+		circularSwap(this->_front[6], this->_front[7], this->_front[8], this->_left[6], this->_left[7], this->_left[8], this->_back[6], this->_back[7], this->_back[8], this->_right[6], this->_right[7], this->_right[8]);
+	}
+	else if (move.compare("D2"))
+	{
+		twiceMovement(this->_down);
+		oppositeSwap(this->_front[6], this->_front[7], this->_front[8], this->_right[6], this->_right[7], this->_right[8], this->_back[6], this->_back[7], this->_back[8], this->_left[6], this->_left[7], this->_left[8]);
+	}
+	else if (move.compare("F'"))
+	{
+		basicMovement(this->_front);
+		circularSwap(this->_up[6], this->_up[7], this->_up[8], this->_right[0], this->_right[3], this->_right[6], this->_down[2], this->_down[1], this->_down[0], this->_left[8], this->_left[5], this->_left[2]);
+	}
+	else if (move.compare("F"))
+	{
+		reverseMovement(this->_front);
+		circularSwap(this->_up[6], this->_up[7], this->_up[8], this->_left[8], this->_left[5], this->_left[2], this->_down[2], this->_down[1], this->_down[0], this->_right[0], this->_right[3], this->_right[6]);
+	}
+	else if (move.compare("F2"))
+	{
+		twiceMovement(this->_front);
+		oppositeSwap(this->_up[6], this->_up[7], this->_up[8], this->_right[0], this->_right[3], this->_right[6], this->_down[2], this->_down[1], this->_down[0], this->_left[8], this->_left[5], this->_left[2]);
+	}
+	else if (move.compare("B'"))
+	{
+		basicMovement(this->_back);
+		circularSwap(this->_up[0], this->_up[1], this->_up[2], this->_left[6], this->_left[3], this->_left[0], this->_down[8], this->_down[7], this->_down[6], this->_right[2], this->_right[5], this->_right[8]);
+	}
+	else if (move.compare("B"))
+	{
+		reverseMovement(this->_back);
+		circularSwap(this->_up[0], this->_up[1], this->_up[2], this->_right[6], this->_right[3], this->_right[0], this->_down[8], this->_down[7], this->_down[6], this->_left[2], this->_left[5], this->_left[8]);
+	}
+	else if (move.compare("B2"))
+	{
+		twiceMovement(this->_back);
+		oppositeSwap(this->_up[0], this->_up[1], this->_up[2], this->_left[6], this->_right[3], this->_right[0], this->_down[8], this->_down[7], this->_down[6], this->_right[2], this->_right[5], this->_right[8]);
+	}
+	else
+	{
+		std::cerr << "Illegal Move !" << std::endl;
+		exit(1);
+	}
+}
+
+std::string	rubik::print_square(char square) const
+{
+	std::string to_ret;
+
+	to_ret = "";
+	if (square == 'w')
+		to_ret = WHITE;
+	else if (square == 'r')
+		to_ret = BRED;
+	else if (square == 'y')
+		to_ret = YELLOW;
+	else if (square == 'g')
+		to_ret = GREEN;
+	else if (square == 'b')
+		to_ret = BLUE;
+	else if (square == 'o')
+		to_ret = RED;
+	to_ret += SQUARE;
+	return (to_ret);
+}
+
+void	rubik::print_cube(void) const
+{
+	std::cout << "      " << print_square(this->_up[0]) << " " << print_square(this->_up[1]) << " " << print_square(this->_up[2]) << "      " << std::endl;
+	std::cout << "      " << print_square(this->_up[3]) << " " << print_square(this->_up[4]) << " " << print_square(this->_up[5]) << "      " << std::endl;
+	std::cout << "      " << print_square(this->_up[6]) << " " << print_square(this->_up[7]) << " " << print_square(this->_up[8]) << "      " << std::endl;
+	std::cout << print_square(this->_left[0]) << " " << print_square(this->_left[1]) << " " << print_square(this->_left[2]) << " " << print_square(this->_front[0]) << " " << print_square(this->_front[1]) << " " << print_square(this->_front[2]) << " " << print_square(this->_right[0]) << " " << print_square(this->_right[1]) << " " << print_square(this->_right[2]) << std::endl;
+	std::cout << print_square(this->_left[3]) << " " << print_square(this->_left[4]) << " " << print_square(this->_left[5]) << " " << print_square(this->_front[3]) << " " << print_square(this->_front[4]) << " " << print_square(this->_front[5]) << " " << print_square(this->_right[3]) << " " << print_square(this->_right[4]) << " " << print_square(this->_right[5]) << std::endl;
+	std::cout << print_square(this->_left[6]) << " " << print_square(this->_left[7]) << " " << print_square(this->_left[8]) << " " << print_square(this->_front[6]) << " " << print_square(this->_front[7]) << " " << print_square(this->_front[8]) << " " << print_square(this->_right[6]) << " " << print_square(this->_right[7]) << " " << print_square(this->_right[8]) << std::endl;
+	std::cout << "      " << print_square(this->_down[0]) << " " << print_square(this->_down[1]) << " " << print_square(this->_down[2]) << "      " << std::endl;
+	std::cout << "      " << print_square(this->_down[3]) << " " << print_square(this->_down[4]) << " " << print_square(this->_down[5]) << "      " << std::endl;
+	std::cout << "      " << print_square(this->_down[6]) << " " << print_square(this->_down[7]) << " " << print_square(this->_down[8]) << "      " << std::endl;
+	std::cout << "      " << print_square(this->_back[8]) << " " << print_square(this->_back[7]) << " " << print_square(this->_back[6]) << "      " << std::endl;
+	std::cout << "      " << print_square(this->_back[5]) << " " << print_square(this->_back[4]) << " " << print_square(this->_back[3]) << "      " << std::endl;
+	std::cout << "      " << print_square(this->_back[2]) << " " << print_square(this->_back[1]) << " " << print_square(this->_back[0]) << "      " << std::endl;
+	std::cout << WHITE << std::endl << std::endl;
+
 }

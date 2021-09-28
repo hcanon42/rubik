@@ -32,6 +32,9 @@ class rubik
 		void				twiceMovement(std::vector<char> face);
 		void				circularSwap(char &a0, char &a1, char &a2, char &b0, char &b1, char &b2, char &c0, char &c1, char &c2, char &d0, char &d1, char &d2);
 		void				oppositeSwap(char &a0, char &a1, char &a2, char &b0, char &b1, char &b2, char &c0, char &c1, char &c2, char &d0, char &d1, char &d2);
+
+		std::string			print_square(char square) const;
+		void				print_cube(void) const;
 };
 
 #endif
