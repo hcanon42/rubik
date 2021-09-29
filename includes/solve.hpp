@@ -6,11 +6,11 @@
 # include <iostream>
 
 # define WHITE "\033[0m"
-# define RED "\033[0;31m"
-# define BLUE "\033[0;34m"
-# define GREEN "\033[0;32m"
-# define YELLOW "\033[0;33m"
-# define BRED "\033[1;31m"
+# define ORANGE "\033[0;95m"
+# define BLUE "\033[0;94m"
+# define GREEN "\033[0;92m"
+# define YELLOW "\033[0;93m"
+# define RED "\033[0;91m"
 # define SQUARE "\u25A0"
 
 void	ft_swap(char &a, char &b);

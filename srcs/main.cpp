@@ -11,19 +11,17 @@ void	ft_swap(char &a, char &b)
 
 int main()
 {
+    std::vector<std::string> possible_moves {
+        "F", "F'", "F2", "B", "B'", "B2", "R", "R'", "R2", "L", "L'", "L2", "U", "U'", "U2", "D", "D'", "D2",
+    };
 	rubik cube;
+
 	cube.print_cube();
-	cube.handleMovement("R'");
-	std::cout <<"R'"<<std::endl;
-	cube.print_cube();
-	cube.handleMovement("L");
-	std::cout <<"L"<<std::endl;
-	cube.print_cube();
-	cube.handleMovement("D2");
-	std::cout << "D2" <<std::endl;
-	cube.print_cube();
-	cube.handleMovement("F'");
-	std::cout <<"F'"<<std::endl;
-	cube.print_cube();
+    for (std::string line; std::getline(std::cin, line);)
+	{
+		cube.handleMovement(line);
+		std::cout << line <<std::endl;
+		cube.print_cube();
+    }
 	return (0);
 }

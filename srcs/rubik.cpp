@@ -59,7 +59,7 @@ rubik   &rubik::operator=(rubik const &rhs)
 	return (*this);
 }
 
-void	rubik::basicMovement(std::vector<char> face)
+void	rubik::basicMovement(std::vector<char> &face)
 {
 	char	tmp;
 
@@ -75,7 +75,7 @@ void	rubik::basicMovement(std::vector<char> face)
 	face[5] = tmp;
 }
 
-void	rubik::reverseMovement(std::vector<char> face)
+void	rubik::reverseMovement(std::vector<char> &face)
 {
 	char	tmp;
 
@@ -91,7 +91,7 @@ void	rubik::reverseMovement(std::vector<char> face)
 	face[3] = tmp;
 }
 
-void	rubik::twiceMovement(std::vector<char> face)
+void	rubik::twiceMovement(std::vector<char> &face)
 {
 	ft_swap(face[0], face[8]);
 	ft_swap(face[1], face[7]);
@@ -132,92 +132,92 @@ void	rubik::oppositeSwap(char &a0, char &a1, char &a2, char &b0, char &b1, char 
 
 void    rubik::handleMovement(std::string move)
 {
-	if (move.compare("R'"))
+	if (move.compare("R") == 0)
 	{
 		basicMovement(this->_right);
 		circularSwap(this->_front[2], this->_front[5], this->_front[8], this->_up[2], this->_up[5], this->_up[8], this->_back[6], this->_back[3], this->_back[0], this->_down[2], this->_down[5], this->_down[8]);
 	}
-	else if (move.compare("R"))
+	else if (move.compare("R'") == 0)
 	{
 		reverseMovement(this->_right);
 		circularSwap(this->_front[2], this->_front[5], this->_front[8], this->_down[2], this->_down[5], this->_down[8], this->_back[6], this->_back[3], this->_back[0], this->_up[2], this->_up[5], this->_up[8]);
 	}
-	else if (move.compare("R2"))
+	else if (move.compare("R2") == 0)
 	{
 		twiceMovement(this->_right);
 		oppositeSwap(this->_front[2], this->_front[5], this->_front[8], this->_up[2], this->_up[5], this->_up[8], this->_back[6], this->_back[3], this->_back[0], this->_down[2], this->_down[5], this->_down[8]);
 	}
-	else if (move.compare("L'"))
+	else if (move.compare("L") == 0)
 	{
 		basicMovement(this->_left);
 		circularSwap(this->_front[0], this->_front[3], this->_front[6], this->_down[0], this->_down[3], this->_down[6], this->_back[8], this->_back[5], this->_back[2], this->_up[0], this->_up[3], this->_up[6]);
 	}
-	else if (move.compare("L"))
+	else if (move.compare("L'") == 0)
 	{
 		reverseMovement(this->_left);
 		circularSwap(this->_front[0], this->_front[3], this->_front[6], this->_up[0], this->_up[3], this->_up[6], this->_back[8], this->_back[5], this->_back[2], this->_down[0], this->_down[3], this->_down[6]);
 	}
-	else if (move.compare("L2"))
+	else if (move.compare("L2") == 0)
 	{
 		twiceMovement(this->_left);
 		oppositeSwap(this->_front[0], this->_front[3], this->_front[6], this->_up[0], this->_up[3], this->_up[6], this->_back[8], this->_back[5], this->_back[2], this->_down[0], this->_down[3], this->_down[6]);
 	}
-	else if (move.compare("U'"))
+	else if (move.compare("U") == 0)
 	{
 		basicMovement(this->_up);
 		circularSwap(this->_front[0], this->_front[1], this->_front[2], this->_left[0], this->_left[1], this->_left[2], this->_back[0], this->_back[1], this->_back[2], this->_right[0], this->_right[1], this->_right[2]);
 	}
-	else if (move.compare("U"))
+	else if (move.compare("U'") == 0)
 	{
 		reverseMovement(this->_up);
 		circularSwap(this->_front[0], this->_front[1], this->_front[2], this->_right[0], this->_right[1], this->_right[2], this->_back[0], this->_back[1], this->_back[2], this->_left[0], this->_left[1], this->_left[2]);
 	}
-	else if (move.compare("U2"))
+	else if (move.compare("U2") == 0)
 	{
 		twiceMovement(this->_up);
 		oppositeSwap(this->_front[0], this->_front[1], this->_front[2], this->_left[0], this->_left[1], this->_left[2], this->_back[0], this->_back[1], this->_back[2], this->_right[0], this->_right[1], this->_right[2]);
 	}
-	else if (move.compare("D'"))
+	else if (move.compare("D") == 0)
 	{
 		basicMovement(this->_down);
 		circularSwap(this->_front[6], this->_front[7], this->_front[8], this->_right[6], this->_right[7], this->_right[8], this->_back[6], this->_back[7], this->_back[8], this->_left[6], this->_left[7], this->_left[8]);
 	}
-	else if (move.compare("D"))
+	else if (move.compare("D'") == 0)
 	{
 		reverseMovement(this->_down);
 		circularSwap(this->_front[6], this->_front[7], this->_front[8], this->_left[6], this->_left[7], this->_left[8], this->_back[6], this->_back[7], this->_back[8], this->_right[6], this->_right[7], this->_right[8]);
 	}
-	else if (move.compare("D2"))
+	else if (move.compare("D2") == 0)
 	{
 		twiceMovement(this->_down);
 		oppositeSwap(this->_front[6], this->_front[7], this->_front[8], this->_right[6], this->_right[7], this->_right[8], this->_back[6], this->_back[7], this->_back[8], this->_left[6], this->_left[7], this->_left[8]);
 	}
-	else if (move.compare("F'"))
+	else if (move.compare("F") == 0)
 	{
 		basicMovement(this->_front);
 		circularSwap(this->_up[6], this->_up[7], this->_up[8], this->_right[0], this->_right[3], this->_right[6], this->_down[2], this->_down[1], this->_down[0], this->_left[8], this->_left[5], this->_left[2]);
 	}
-	else if (move.compare("F"))
+	else if (move.compare("F'") == 0)
 	{
 		reverseMovement(this->_front);
 		circularSwap(this->_up[6], this->_up[7], this->_up[8], this->_left[8], this->_left[5], this->_left[2], this->_down[2], this->_down[1], this->_down[0], this->_right[0], this->_right[3], this->_right[6]);
 	}
-	else if (move.compare("F2"))
+	else if (move.compare("F2") == 0)
 	{
 		twiceMovement(this->_front);
 		oppositeSwap(this->_up[6], this->_up[7], this->_up[8], this->_right[0], this->_right[3], this->_right[6], this->_down[2], this->_down[1], this->_down[0], this->_left[8], this->_left[5], this->_left[2]);
 	}
-	else if (move.compare("B'"))
+	else if (move.compare("B") == 0)
 	{
 		basicMovement(this->_back);
 		circularSwap(this->_up[0], this->_up[1], this->_up[2], this->_left[6], this->_left[3], this->_left[0], this->_down[8], this->_down[7], this->_down[6], this->_right[2], this->_right[5], this->_right[8]);
 	}
-	else if (move.compare("B"))
+	else if (move.compare("B'") == 0)
 	{
 		reverseMovement(this->_back);
-		circularSwap(this->_up[0], this->_up[1], this->_up[2], this->_right[6], this->_right[3], this->_right[0], this->_down[8], this->_down[7], this->_down[6], this->_left[2], this->_left[5], this->_left[8]);
+		circularSwap(this->_up[0], this->_up[1], this->_up[2], this->_right[2], this->_right[5], this->_right[8], this->_down[8], this->_down[7], this->_down[6], this->_left[6], this->_left[3], this->_left[0]);
 	}
-	else if (move.compare("B2"))
+	else if (move.compare("B2") == 0)
 	{
 		twiceMovement(this->_back);
 		oppositeSwap(this->_up[0], this->_up[1], this->_up[2], this->_left[6], this->_right[3], this->_right[0], this->_down[8], this->_down[7], this->_down[6], this->_right[2], this->_right[5], this->_right[8]);
@@ -237,15 +237,15 @@ std::string	rubik::print_square(char square) const
 	if (square == 'w')
 		to_ret = WHITE;
 	else if (square == 'r')
-		to_ret = BRED;
+		to_ret = RED;
 	else if (square == 'y')
 		to_ret = YELLOW;
 	else if (square == 'g')
 		to_ret = GREEN;
 	else if (square == 'b')
-		to_ret = BLUE;
+		to_ret = BLUE; 
 	else if (square == 'o')
-		to_ret = RED;
+		to_ret = ORANGE;
 	to_ret += SQUARE;
 	return (to_ret);
 }
