@@ -1,32 +1,45 @@
-<h1 align="center">Welcome to rubik 👋</h1>
+# Rubik
+A rubik's cube solver in less than 21 moves !
 
-> Rubik's Cube solver in less than 20 moves !
+## Table of Content
 
-### 🏠 [Homepage](https://github.com/hcanon42/rubik)
+* [Technologies](#technologies)
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Utility](#utility)
+* [Contributing](#contributing)
 
-## Install
+## Technologies
 
+Project is created with:
+* clang++ version: 10.0.0
+
+## Description
+
+description of rubik and shuffle
+
+## Installation
+
+To install, just clone the repository and run :
 ```sh
 make
 ```
+Two binaries should then be available to you: "rubik" and "shuffle"
 
 ## Usage
 
 ```sh
-./shuffle 20 | ./rubik
+./rubik
+./suffle [0 < number_of_moves < 1000]
+./rubik [moves_to_shuffle_the_cube]
+```
+or the most used:
+```sh
+./suffle [0 < number_of_moves < 1000] | ./rubik
 ```
 
-## Author
+## Contributing
 
-👤 **Hugo Canon**
-
-* Github: [@hcanon42](https://github.com/hcanon42)
-* LinkedIn: [@hugo-canon-07882b212](https://linkedin.com/in/hugo-canon-07882b212)
-
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/hcanon42/rubik/issues). 
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.\
+Please make sure to update tests as appropriate.
