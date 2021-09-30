@@ -7,7 +7,6 @@ A rubik's cube solver in less than 21 moves !
 * [Description](#description)
 * [Installation](#installation)
 * [Usage](#usage)
-* [Utility](#utility)
 * [Contributing](#contributing)
 
 ## Technologies
@@ -30,9 +29,9 @@ Two binaries should then be available to you: "rubik" and "shuffle"
 ## Usage
 
 ```sh
-./rubik
-./suffle [0 < number_of_moves < 1000]
-./rubik [moves_to_shuffle_the_cube]
+./rubik				(listens to std_in)
+./rubik "R L' B2"	(moves to shuffle the cube)
+./suffle 20 		(0 < number_of_moves < 1000)
 ```
 or the most used:
 ```sh
