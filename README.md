@@ -1,9 +1,4 @@
 <h1 align="center">Welcome to rubik 👋</h1>
-<p>
-  <a href="https://www.npmjs.com/package/rubik" target="_blank">
-    <img alt="Version" src="https://img.shields.io/npm/v/rubik.svg">
-  </a>
-</p>
 
 > Rubik's Cube solver in less than 20 moves !
 
@@ -35,6 +30,3 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
