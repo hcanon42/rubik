@@ -4,6 +4,8 @@
 # include <string>
 # include <vector>
 # include <iostream>
+# include <random>
+# include <time.h>
 
 # define WHITE "\033[0m"
 # define ORANGE "\033[0;95m"
@@ -13,6 +15,10 @@
 # define RED "\033[0;91m"
 # define SQUARE "\u25A0"
 
-void	ft_swap(char &a, char &b);
+std::vector<std::string> const possible_moves({
+	"F", "F'", "F2", "B", "B'", "B2", "R", "R'", "R2", "L", "L'", "L2", "U", "U'", "U2", "D", "D'", "D2",
+});
+
+void						ft_swap(char &a, char &b);
 
 #endif

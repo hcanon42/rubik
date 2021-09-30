@@ -1,33 +1,10 @@
-#include <string>
-#include <vector>
-#include <iostream>
-#include <random>
-#include <time.h>
+
+#include "../../includes/solve.hpp"
 
 void    print_shuffle(int n)
 {
     int move;
     int previous_move;
-    std::vector<std::string> possible_moves{
-        "F",
-        "F'",
-        "F2",
-        "B",
-        "B'",
-        "B2",
-        "R",
-        "R'",
-        "R2",
-        "L",
-        "L'",
-        "L2",
-        "U",
-        "U'",
-        "U2",
-        "D",
-        "D'",
-        "D2",
-    };
 
     srand(time(NULL));
     previous_move = -1;

@@ -48,6 +48,18 @@ std::vector<char>	rubik::getBack(void) const
 	return (this->_back);
 }
 
+int					rubik::isResolved(void) const
+{
+	if (this->_up == std::vector<char>{'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w'} && 
+				this->_down == std::vector<char>{'y', 'y', 'y', 'y', 'y', 'y', 'y', 'y', 'y'} &&
+				this->_right == std::vector<char>{'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'} &&
+				this->_left == std::vector<char>{'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r'} &&
+				this->_front == std::vector<char>{'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'} &&
+				this->_back == std::vector<char>{'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g'})
+		return (1);
+	return (0);
+}
+
 rubik   &rubik::operator=(rubik const &rhs)
 {
 	this->_up = rhs.getUp();

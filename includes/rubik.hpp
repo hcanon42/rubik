@@ -35,6 +35,10 @@ class rubik
 
 		std::string			print_square(char square) const;
 		void				print_cube(void) const;
+
+		int					isResolved(void) const;
 };
+
+std::vector<std::string>	ft_recur(rubik cube, std::vector<std::string> solution, int beginning);
 
 #endif
