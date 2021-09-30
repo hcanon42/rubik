@@ -34,9 +34,10 @@ void    print_shuffle(int n)
     for (int i = 0; i < n; i++)
     {
         move = rand() % 18;
-        while (move % 3 == previous_move % 3)
+        while (move / 3 == previous_move / 3)
             move = rand() % 18;
         std::cout << possible_moves[move] << std::endl;
+		previous_move = move;
     }
 }
 

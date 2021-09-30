@@ -220,11 +220,11 @@ void    rubik::handleMovement(std::string move)
 	else if (move.compare("B2") == 0)
 	{
 		twiceMovement(this->_back);
-		oppositeSwap(this->_up[0], this->_up[1], this->_up[2], this->_left[6], this->_right[3], this->_right[0], this->_down[8], this->_down[7], this->_down[6], this->_right[2], this->_right[5], this->_right[8]);
+		oppositeSwap(this->_up[0], this->_up[1], this->_up[2], this->_left[6], this->_left[3], this->_left[0], this->_down[8], this->_down[7], this->_down[6], this->_right[2], this->_right[5], this->_right[8]);
 	}
 	else
 	{
-		std::cerr << "Illegal Move !" << std::endl;
+		std::cerr << "Illegal Move : \"" << move << "\"" << std::endl;
 		exit(1);
 	}
 }
