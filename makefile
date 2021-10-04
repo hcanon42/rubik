@@ -6,9 +6,10 @@ OBJS_SHUFFLE=	${SRCS_SHUFFLE:.cpp=.o}
 
 
 #====================================SRCS=======================================
-SRCS			=	srcs/rubik.cpp	\
-					srcs/main.cpp	\
-					srcs/solve.cpp
+SRCS			=	srcs/rubik.cpp			\
+					srcs/main.cpp			\
+					srcs/solve_brute.cpp	\
+					srcs/solve_steps.cpp
 SRCS_SHUFFLE	=	srcs/shuffle/shuffle.cpp
 
 

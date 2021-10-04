@@ -264,18 +264,18 @@ std::string	rubik::print_square(char square) const
 
 void	rubik::print_cube(void) const
 {
-	std::cout << "      " << print_square(this->_up[0]) << " " << print_square(this->_up[1]) << " " << print_square(this->_up[2]) << "      " << std::endl;
-	std::cout << "      " << print_square(this->_up[3]) << " " << print_square(this->_up[4]) << " " << print_square(this->_up[5]) << "      " << std::endl;
-	std::cout << "      " << print_square(this->_up[6]) << " " << print_square(this->_up[7]) << " " << print_square(this->_up[8]) << "      " << std::endl;
+	std::cout << "      " << print_square(this->_up[0]) << " " << print_square(this->_up[1]) << " " << print_square(this->_up[2]) << "      \n";
+	std::cout << "      " << print_square(this->_up[3]) << " " << print_square(this->_up[4]) << " " << print_square(this->_up[5]) << "      \n";
+	std::cout << "      " << print_square(this->_up[6]) << " " << print_square(this->_up[7]) << " " << print_square(this->_up[8]) << "      \n";
 	std::cout << print_square(this->_left[0]) << " " << print_square(this->_left[1]) << " " << print_square(this->_left[2]) << " " << print_square(this->_front[0]) << " " << print_square(this->_front[1]) << " " << print_square(this->_front[2]) << " " << print_square(this->_right[0]) << " " << print_square(this->_right[1]) << " " << print_square(this->_right[2]) << std::endl;
 	std::cout << print_square(this->_left[3]) << " " << print_square(this->_left[4]) << " " << print_square(this->_left[5]) << " " << print_square(this->_front[3]) << " " << print_square(this->_front[4]) << " " << print_square(this->_front[5]) << " " << print_square(this->_right[3]) << " " << print_square(this->_right[4]) << " " << print_square(this->_right[5]) << std::endl;
 	std::cout << print_square(this->_left[6]) << " " << print_square(this->_left[7]) << " " << print_square(this->_left[8]) << " " << print_square(this->_front[6]) << " " << print_square(this->_front[7]) << " " << print_square(this->_front[8]) << " " << print_square(this->_right[6]) << " " << print_square(this->_right[7]) << " " << print_square(this->_right[8]) << std::endl;
-	std::cout << "      " << print_square(this->_down[0]) << " " << print_square(this->_down[1]) << " " << print_square(this->_down[2]) << "      " << std::endl;
-	std::cout << "      " << print_square(this->_down[3]) << " " << print_square(this->_down[4]) << " " << print_square(this->_down[5]) << "      " << std::endl;
-	std::cout << "      " << print_square(this->_down[6]) << " " << print_square(this->_down[7]) << " " << print_square(this->_down[8]) << "      " << std::endl;
-	std::cout << "      " << print_square(this->_back[8]) << " " << print_square(this->_back[7]) << " " << print_square(this->_back[6]) << "      " << std::endl;
-	std::cout << "      " << print_square(this->_back[5]) << " " << print_square(this->_back[4]) << " " << print_square(this->_back[3]) << "      " << std::endl;
-	std::cout << "      " << print_square(this->_back[2]) << " " << print_square(this->_back[1]) << " " << print_square(this->_back[0]) << "      " << std::endl;
+	std::cout << "      " << print_square(this->_down[0]) << " " << print_square(this->_down[1]) << " " << print_square(this->_down[2]) << "      \n";
+	std::cout << "      " << print_square(this->_down[3]) << " " << print_square(this->_down[4]) << " " << print_square(this->_down[5]) << "      \n";
+	std::cout << "      " << print_square(this->_down[6]) << " " << print_square(this->_down[7]) << " " << print_square(this->_down[8]) << "      \n";
+	std::cout << "      " << print_square(this->_back[8]) << " " << print_square(this->_back[7]) << " " << print_square(this->_back[6]) << "      \n";
+	std::cout << "      " << print_square(this->_back[5]) << " " << print_square(this->_back[4]) << " " << print_square(this->_back[3]) << "      \n";
+	std::cout << "      " << print_square(this->_back[2]) << " " << print_square(this->_back[1]) << " " << print_square(this->_back[0]) << "      \n";
 	std::cout << WHITE << std::endl << std::endl;
 
 }

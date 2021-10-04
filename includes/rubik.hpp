@@ -39,6 +39,8 @@ class rubik
 		int					isResolved(void) const;
 };
 
-std::vector<std::string>	ft_recur(rubik cube, std::vector<std::string> solution, int beginning);
+std::vector<std::string>	ft_recur(rubik cube, std::vector<std::string> solution, int beginning, size_t level);
+std::vector<std::string>	ft_scale(rubik cube, size_t level);
+int							ft_solve(rubik cube, std::vector<std::string> solution);
 
 #endif
