@@ -60,17 +60,7 @@ int		main(int ac, char **argv)
 		std::cerr << "Usage:\n./rubik [moves_to_make_separated_by_spaces]\n./rubik (reads on stdin)\n./shuffle [0 < number_of_moves < 1000] | ./rubiks (to shuffle randomly)" << std::endl;
 		return (1);
 	}
-	for (size_t i = 0; i < 20; i++)
-	{
-		solution = ft_recur(cube, solution, 1, i + 1);
-		std::cout << "finished searching for i = " << i + 1 << std::endl;
-		if (solution.empty() == 0)
-		{
-			std::cout << "solution found !! cube before = " << std::endl;
-			break;
-		}
-	}
-
+	ft_solve_white_cross(cube, solution);
 	cube.print_cube();
 	for (size_t i = 0; i < solution.size(); i++)
 	{

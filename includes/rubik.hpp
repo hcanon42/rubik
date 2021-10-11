@@ -41,6 +41,6 @@ class rubik
 
 std::vector<std::string>	ft_recur(rubik cube, std::vector<std::string> solution, int beginning, size_t level);
 std::vector<std::string>	ft_scale(rubik cube, size_t level);
-int							ft_solve(rubik cube, std::vector<std::string> solution);
+int							ft_solve_white_cross(rubik cube, std::vector<std::string> solution);
 
 #endif
